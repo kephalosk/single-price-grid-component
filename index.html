@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="stylesheet" href="https://fonts.google.com/specimen/Karla">
         <title>kephalosk | Single Price Grid</title>
         <style>
             .attribution {
@@ -13,6 +14,182 @@
 
             .attribution a { color:
                     hsl(228, 45%, 44%);
+            }
+
+            .cardBox {
+                align-items: center;
+                border-radius: 10px;
+                box-shadow: 0 10px 50px -20px hsl(218, 22%, 67%);
+                display: grid;
+                grid-template-rows: auto auto;
+                justify-content: center;
+                margin: 160px 0;
+                max-width: 635px;
+                width: 100%;
+
+                @media (max-width: 450px) {
+                    margin: 75px 0;
+                }
+            }
+
+            .cardBoxBottom {
+                align-items: center;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                justify-content: center;
+
+                @media (max-width: 450px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .cardBoxBottomLeft {
+                align-items: start;
+                background-image: linear-gradient(to bottom right, hsl(179, 62%, 43%), hsl(179, 62%, 40%));
+                border-radius: 0 0 0 10px;
+                display: grid;
+                grid-template-rows: auto auto;
+                justify-content: center;
+                height: 100%;
+                padding: 40px;
+
+                @media (max-width: 450px) {
+                    border-radius: 0;
+                    padding: 24px;
+                }
+            }
+
+            .cardBoxBottomLeftButtonContainer {
+                align-items: end;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                height: 100%;
+            }
+
+            .cardBoxBottomLeftDetails {
+                align-items: start;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .cardBoxBottomLeftDetails p{
+                margin: 12px 0;
+            }
+
+            .cardBoxBottomLeftDetailsPriceBar {
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .cardBoxBottomLeftDetailsPriceBar label {
+                color: hsl(204, 43%, 93%);
+            }
+
+            .cardBoxBottomRight {
+                align-items: flex-start;
+                background-image: linear-gradient(to bottom right, hsl(179, 62%, 45%), hsl(179, 62%, 43%));
+                border-radius: 0 0 10px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                height: 100%;
+                padding: 40px;
+
+                @media (max-width: 450px) {
+                    border-radius: 0 0 10px 10px;
+                    padding: 24px;
+                }
+            }
+
+            .cardBoxBottomRight p {
+                height: 100%;
+            }
+
+            * {
+                box-sizing: border-box
+            }
+
+            body {
+                align-items: center;
+                background-color: hsl(204, 43%, 93%);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-family: Karla,sans-serif;
+                margin: 0 32px;
+            }
+
+            button {
+                align-self: end;
+                background-color: hsl(71, 73%, 54%);
+                border: 0;
+                border-radius: 5px;
+                box-shadow: 0 10px 20px -15px hsl(0 ,0%, 0%);
+                color: hsl(0, 0%, 100%);
+                font-weight: bold;
+                padding: 12px 0;
+                width: 100%;
+            }
+
+            button:hover {
+                background-color: hsl(71, 73%, 40%);
+                color: hsl(71, 73%, 54%);
+            }
+
+            h1 {
+                color: hsl(179, 62%, 43%);
+                font-size: 24px;
+                margin-top: 0;
+            }
+
+            h2 {
+                color: hsl(0, 0%, 100%);
+                font-size: 14px;
+                letter-spacing: 1px;
+            }
+
+            h3 {
+                color: hsl(0, 0%, 100%);
+                font-size: 32px;
+                margin: 0 12px 0 0;
+            }
+
+            header {
+                margin: 40px;
+
+                @media (max-width: 450px) {
+                    margin: 24px;
+                }
+            }
+
+            header label {
+                color: hsl(71, 73%, 54%);
+                font-weight: bold;
+            }
+
+            header p {
+                color: hsl(218, 22%, 67%);;
+                line-height: 150%;
+                letter-spacing: 1px;
+            }
+
+            p {
+                color: hsl(204, 43%, 93%);
+                font-size: 14px;
+                line-height: 150%;
+                margin-bottom: 0;
+            }
+
+            .colors {
+                color: hsl(179, 62%, 43%);
+                color: hsl(71, 73%, 54%);
+                color: hsl(204, 43%, 93%);
+                color: hsl(218, 22%, 67%);
+                color: hsl(0, 0%, 100%);
             }
         </style>
     </head>
@@ -27,11 +204,15 @@
                 </header>
                 <section class="cardBoxBottom">
                     <div class="cardBoxBottomLeft">
-                        <h2>Monthly Subscription</h2>
-                        <div class="cardBoxBottomLeftPriceBar">
-                            <h3>&dollar;29</h3>
-                            <label>per month</label>
+                        <div class="cardBoxBottomLeftDetails">
+                            <h2>Monthly Subscription</h2>
+                            <div class="cardBoxBottomLeftDetailsPriceBar">
+                                <h3>&dollar;29</h3>
+                                <label>per month</label>
+                            </div>
                             <p>Full access for less than &dollar;1 a day</p>
+                        </div>
+                        <div class="cardBoxBottomLeftButtonContainer">
                             <button>Sign Up</button>
                         </div>
                     </div>
